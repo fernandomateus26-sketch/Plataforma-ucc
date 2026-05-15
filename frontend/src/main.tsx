@@ -1,0 +1,13 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { RoutesPages } from "./app/routes/routes.routes.tsx";
+
+import "./index.css";
+import "./assets/styles/globals.css";
+import "./assets/styles/variables.css";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <RoutesPages />
+  </StrictMode>,
+);
