@@ -1,1 +1,1 @@
-export * from "./admin/homeAdmin/homeAdmin";
+export * from "./appEstudante/paginaInicial/paginaInicial";

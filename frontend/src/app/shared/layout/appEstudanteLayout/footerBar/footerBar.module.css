@@ -1,0 +1,103 @@
+.footer {
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: auto;
+}
+
+.footerLeft {
+  font-weight: 400;
+}
+
+.footerLeft strong {
+  color: var(--text-color);
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Status Indicator */
+.statusContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--success-color);
+  border-radius: var(--radius-full);
+  display: inline-block;
+  box-shadow: 0 0 6px var(--success-color);
+  animation: pulseStatus 2s infinite;
+}
+
+.statusText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Links */
+.linksContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--primary-color);
+}
+
+.separator {
+  color: var(--text-muted);
+  font-size: 0.6rem;
+}
+
+@keyframes pulseStatus {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  
+  .footerRight {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

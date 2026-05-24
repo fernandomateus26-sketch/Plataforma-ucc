@@ -1,0 +1,428 @@
+.header {
+  height: var(--header-height);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: var(--shadow-sm);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobileMenuToggle {
+  display: none;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.mobileMenuToggle:hover {
+  background-color: var(--border-color);
+}
+
+/* Breadcrumbs */
+.breadcrumbContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.breadcrumbRoot {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.breadcrumbSeparator {
+  color: var(--text-muted);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Header Right */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.greetingText {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.studentName {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color-dark);
+}
+
+/* Base button */
+.iconButton {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: all var(--transition-fast);
+}
+
+.iconButton:hover, .iconButtonActive {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: var(--danger-color);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-card);
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+/* Relative Container */
+.relativeContainer {
+  position: relative;
+}
+
+/* Notifications Dropdown */
+.dropdownNotifications {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: 320px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideInDown var(--transition-fast) forwards;
+}
+
+.dropdownHeader {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdownHeader h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.markAllRead {
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.markAllRead:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.notificationsList {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.notificationItem {
+  display: flex;
+  padding: 12px 16px;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.notificationItem:hover {
+  background-color: var(--primary-light);
+}
+
+.notifIconWrapper {
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.notifIconSuccess { color: var(--success-color); }
+.notifIconInfo { color: var(--info-color); }
+.notifIconWarning { color: var(--warning-color); }
+
+.notifContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notifTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.notifDesc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.notifTime {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.dropdownFooter {
+  border-top: 1px solid var(--border-color);
+}
+
+.viewAllButton {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: none;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.viewAllButton:hover {
+  background-color: var(--border-color);
+}
+
+/* Profile Trigger */
+.profileTrigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+  text-align: left;
+}
+
+.profileTrigger:hover {
+  background-color: var(--border-color);
+}
+
+.avatarImage {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.avatarFallback {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.studentMeta {
+  display: flex;
+  flex-direction: column;
+}
+
+.studentNameFull {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.studentRegistry {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Profile Dropdown */
+.dropdownProfile {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: 260px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: slideInDown var(--transition-fast) forwards;
+}
+
+.profileDropdownHeader {
+  padding: 16px;
+  background-color: var(--bg-layout);
+  border-bottom: 1px solid var(--border-color-dark);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.profileHeaderInitials {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.profileHeaderDetails h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+  color: var(--text-color);
+}
+
+.profileHeaderDetails p {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin: 0 0 2px 0;
+  line-height: 1.2;
+}
+
+.profileHeaderDetails span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.profileDropdownMenu {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profileMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.profileMenuItem:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+
+.menuDivider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 4px 0;
+}
+
+.menuItemLogout {
+  color: var(--danger-color);
+}
+
+.menuItemLogout:hover {
+  background-color: rgba(239, 68, 68, 0.05);
+  color: var(--danger-color);
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive rules */
+@media screen and (max-width: 992px) {
+  .header {
+    padding: 0 16px;
+  }
+  .mobileMenuToggle {
+    display: flex;
+  }
+  .greetingText, .studentMeta {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .breadcrumbContainer {
+    display: none;
+  }
+}
